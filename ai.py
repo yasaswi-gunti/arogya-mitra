@@ -9,10 +9,13 @@ BASE_API_URL = "https://api.langflow.astra.datastax.com"
 LANGFLOW_ID = "ad90a74f-3f20-4fda-8767-cd073e2a026f"
 FLOW_ID = "15d06b80-51ad-4db9-bf38-3b9010a4d1f8"
 ENDPOINT = "trail"
-def get_tweeks(query):
+def get_tweeks(profile, query):
     return {
         "TextInput-JXN8i": {
             "input_value": query
+        },
+        "TextInput-dlDit": {
+        "input_value": profile
         }
     }
 
@@ -50,6 +53,6 @@ def extract_output_text(response):
         return f"Error extracting text: {e}"
     
 def ask_ai(input):
-    tweeks = get_tweeks(input)
+    tweeks = get_tweeks(profile, input)
     response = run_flow("",ENDPOINT, tweaks=tweeks, application_token=APPLICATION_TOKEN)
     return extract_output_text(response)
