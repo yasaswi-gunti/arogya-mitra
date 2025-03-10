@@ -5,10 +5,10 @@ def main():
     st.title("Arogya Mitra")
 
     user_profile = st.text_area("Enter your profile:", 
-                                value="30 year old male of height 180 cm and weight 70 kg")
+                                placeholder="30 year old male of height 180 cm and weight 70 kg")
         
     # Health-related query input
-    user_input = st.text_area("Enter your health-related query:", value="I'm having fever and headache from 3 days and vomits also")
+    user_input = st.text_area("Enter your health-related query:", placeholder="I'm having fever and headache from 3 days and vomits also")
 
     if st.button("Submit"):
         if user_input:
