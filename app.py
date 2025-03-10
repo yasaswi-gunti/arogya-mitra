@@ -12,9 +12,10 @@ def main():
 
     if st.button("Submit"):
         if user_input:
-            response = ask_ai(user_profile, user_input)
-            st.subheader("Response:")
-            st.write(response)
+            with st.spinner("Diagnosing..."):
+                response = ask_ai(user_profile, user_input)
+                st.subheader("Response:")
+                st.write(response)
         else:
             st.warning("Please enter a query.")
 
