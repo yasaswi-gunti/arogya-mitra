@@ -52,7 +52,7 @@ def extract_output_text(response):
         # Handle any possible errors in case the structure is different or missing keys
         return f"Error extracting text: {e}"
     
-def ask_ai(input):
+def ask_ai(profile, input):
     tweeks = get_tweeks(profile, input)
     response = run_flow("",ENDPOINT, tweaks=tweeks, application_token=APPLICATION_TOKEN)
     return extract_output_text(response)
